@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "factura",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "empresa",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "fecha",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}

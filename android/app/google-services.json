@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "742773725596",
+    "project_id": "proyecto-excalibur-tech-clh29l",
+    "storage_bucket": "proyecto-excalibur-tech-clh29l.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742773725596:android:e6cbd86eaa3a3abd095059",
+        "android_client_info": {
+          "package_name": "com.mycompany.proyectoexcaliburtech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoR7GlqCNEmbZBPUun1J_q_Kr5Z25Cabo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
