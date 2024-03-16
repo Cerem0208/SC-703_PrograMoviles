@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
-import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'admin_crear_bodeguero_model.dart';
 export 'admin_crear_bodeguero_model.dart';
@@ -1445,39 +1444,6 @@ class _AdminCrearBodegueroWidgetState extends State<AdminCrearBodegueroWidget> {
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           size: 30.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(1.0, -1.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 20.0, 0.0),
-                      child: badges.Badge(
-                        badgeContent: Text(
-                          '5',
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                  ),
-                        ),
-                        showBadge: true,
-                        shape: badges.BadgeShape.circle,
-                        badgeColor: const Color(0xFFEDB718),
-                        elevation: 4.0,
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
-                        position: badges.BadgePosition.topEnd(),
-                        animationType: badges.BadgeAnimationType.scale,
-                        toAnimate: true,
-                        child: Icon(
-                          Icons.notifications_sharp,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 40.0,
                         ),
                       ),
                     ),

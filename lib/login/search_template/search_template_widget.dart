@@ -3,7 +3,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'search_template_model.dart';
@@ -259,28 +258,15 @@ class _SearchTemplateWidgetState extends State<SearchTemplateWidget> {
                                                       endActionPane: ActionPane(
                                                         motion:
                                                             const ScrollMotion(),
-                                                        extentRatio: 0.5,
+                                                        extentRatio: 0.25,
                                                         children: [
                                                           SlidableAction(
-                                                            label: '',
+                                                            label: 'Share',
                                                             backgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .error,
-                                                            icon: Icons
-                                                                .delete_forever,
-                                                            onPressed: (_) {
-                                                              print(
-                                                                  'SlidableActionWidget pressed ...');
-                                                            },
-                                                          ),
-                                                          SlidableAction(
-                                                            label: '',
-                                                            backgroundColor:
-                                                                const Color(
-                                                                    0xFFF4B402),
-                                                            icon: Icons
-                                                                .edit_square,
+                                                                    .info,
+                                                            icon: Icons.share,
                                                             onPressed: (_) {
                                                               print(
                                                                   'SlidableActionWidget pressed ...');
@@ -294,13 +280,16 @@ class _SearchTemplateWidgetState extends State<SearchTemplateWidget> {
                                                           size: 35.0,
                                                         ),
                                                         title: Text(
-                                                          'Title',
+                                                          listViewFacturaRecord
+                                                              .nombre,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleLarge,
                                                         ),
                                                         subtitle: Text(
-                                                          'Subtitle goes here...',
+                                                          listViewFacturaRecord
+                                                              .total
+                                                              .toString(),
                                                           textAlign:
                                                               TextAlign.start,
                                                           style: FlutterFlowTheme
@@ -406,46 +395,13 @@ class _SearchTemplateWidgetState extends State<SearchTemplateWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('adminMenuBodeguero');
+                          context.pushNamed('vendedorMenuFacturas');
                         },
                         child: Icon(
                           Icons.arrow_back_ios,
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           size: 30.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(1.0, -1.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 20.0, 0.0),
-                      child: badges.Badge(
-                        badgeContent: Text(
-                          '5',
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                  ),
-                        ),
-                        showBadge: true,
-                        shape: badges.BadgeShape.circle,
-                        badgeColor: const Color(0xFFEDB718),
-                        elevation: 4.0,
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
-                        position: badges.BadgePosition.topEnd(),
-                        animationType: badges.BadgeAnimationType.scale,
-                        toAnimate: true,
-                        child: Icon(
-                          Icons.notifications_sharp,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 40.0,
                         ),
                       ),
                     ),

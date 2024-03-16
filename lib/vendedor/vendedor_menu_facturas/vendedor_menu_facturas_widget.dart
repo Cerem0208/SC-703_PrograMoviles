@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'vendedor_menu_facturas_model.dart';
@@ -441,9 +440,9 @@ class _VendedorMenuFacturasWidgetState
                                                                   0.0,
                                                                   0.0),
                                                       child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'btnBuscarFactura pressed ...');
+                                                        onPressed: () async {
+                                                          context.pushNamed(
+                                                              'Search_Template');
                                                         },
                                                         text: 'Buscar Factura',
                                                         options:
@@ -584,39 +583,6 @@ class _VendedorMenuFacturasWidgetState
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           size: 30.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(1.0, -1.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 20.0, 0.0),
-                      child: badges.Badge(
-                        badgeContent: Text(
-                          '5',
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                  ),
-                        ),
-                        showBadge: true,
-                        shape: badges.BadgeShape.circle,
-                        badgeColor: const Color(0xFFEDB718),
-                        elevation: 4.0,
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
-                        position: badges.BadgePosition.topEnd(),
-                        animationType: badges.BadgeAnimationType.scale,
-                        toAnimate: true,
-                        child: Icon(
-                          Icons.notifications_sharp,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 40.0,
                         ),
                       ),
                     ),
