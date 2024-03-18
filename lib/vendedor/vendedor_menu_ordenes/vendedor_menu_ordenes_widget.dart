@@ -316,70 +316,11 @@ class _VendedorMenuOrdenesWidgetState extends State<VendedorMenuOrdenesWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'btnCrearOrden pressed ...');
+                                                        onPressed: () async {
+                                                          context.pushNamed(
+                                                              'vendedorCrearOrdenCopy');
                                                         },
                                                         text: 'Crear Orden',
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 40.0,
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color:
-                                                              const Color(0xFF1F66F2),
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Readex Pro',
-                                                                    color: Colors
-                                                                        .white,
-                                                                  ),
-                                                          elevation: 3.0,
-                                                          borderSide:
-                                                              const BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'btnEditarOrden pressed ...');
-                                                        },
-                                                        text: 'Editar Orden',
                                                         options:
                                                             FFButtonOptions(
                                                           height: 40.0,
@@ -439,70 +380,11 @@ class _VendedorMenuOrdenesWidgetState extends State<VendedorMenuOrdenesWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'btnBuscarOrden pressed ...');
+                                                        onPressed: () async {
+                                                          context.pushNamed(
+                                                              'vendedorBuscarOrden');
                                                         },
                                                         text: 'Buscar Orden',
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 40.0,
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color:
-                                                              const Color(0xFF1F66F2),
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Readex Pro',
-                                                                    color: Colors
-                                                                        .white,
-                                                                  ),
-                                                          elevation: 3.0,
-                                                          borderSide:
-                                                              const BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  10.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'btnEliminarOrden pressed ...');
-                                                        },
-                                                        text: 'Eliminar Orden',
                                                         options:
                                                             FFButtonOptions(
                                                           height: 40.0,

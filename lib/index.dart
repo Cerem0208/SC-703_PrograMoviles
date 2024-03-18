@@ -29,7 +29,22 @@ export '/admin/admin_menu_ruta/admin_menu_ruta_widget.dart'
     show AdminMenuRutaWidget;
 export '/admin/admin_menu_empresa_cliente/admin_menu_empresa_cliente_widget.dart'
     show AdminMenuEmpresaClienteWidget;
-export '/login/home/home_widget.dart' show HomeWidget;
 export '/login/admin_page/admin_page_widget.dart' show AdminPageWidget;
-export '/login/search_template/search_template_widget.dart'
-    show SearchTemplateWidget;
+export '/vendedor/vendedor_crear_orden/vendedor_crear_orden_widget.dart'
+    show VendedorCrearOrdenWidget;
+export '/vendedor/vendedor_crear_orden_copy/vendedor_crear_orden_copy_widget.dart'
+    show VendedorCrearOrdenCopyWidget;
+export '/mostrar/admin_buscar_cliente/admin_buscar_cliente_widget.dart'
+    show AdminBuscarClienteWidget;
+export '/mostrar/admin_buscar_vendedor/admin_buscar_vendedor_widget.dart'
+    show AdminBuscarVendedorWidget;
+export '/mostrar/admin_buscar_rutas/admin_buscar_rutas_widget.dart'
+    show AdminBuscarRutasWidget;
+export '/mostrar/admin_mostrar_bodeguero/admin_mostrar_bodeguero_widget.dart'
+    show AdminMostrarBodegueroWidget;
+export '/mostrar/vendedor_buscar_orden/vendedor_buscar_orden_widget.dart'
+    show VendedorBuscarOrdenWidget;
+export '/mostrar/vendedor_mostrar_factura/vendedor_mostrar_factura_widget.dart'
+    show VendedorMostrarFacturaWidget;
+export '/mostrar/mostar_camion/mostar_camion_widget.dart'
+    show MostarCamionWidget;

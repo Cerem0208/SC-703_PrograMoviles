@@ -324,7 +324,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               return;
                             }
 
-                            context.goNamedAuth('Home', context.mounted);
+                            context.goNamedAuth('Admin_Page', context.mounted);
                           },
                           text: 'Iniciar Sesión ',
                           options: FFButtonOptions(

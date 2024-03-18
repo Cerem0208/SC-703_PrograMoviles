@@ -5,28 +5,27 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'search_template_model.dart';
-export 'search_template_model.dart';
+import 'vendedor_mostrar_factura_model.dart';
+export 'vendedor_mostrar_factura_model.dart';
 
-class SearchTemplateWidget extends StatefulWidget {
-  const SearchTemplateWidget({super.key});
+class VendedorMostrarFacturaWidget extends StatefulWidget {
+  const VendedorMostrarFacturaWidget({super.key});
 
   @override
-  State<SearchTemplateWidget> createState() => _SearchTemplateWidgetState();
+  State<VendedorMostrarFacturaWidget> createState() =>
+      _VendedorMostrarFacturaWidgetState();
 }
 
-class _SearchTemplateWidgetState extends State<SearchTemplateWidget> {
-  late SearchTemplateModel _model;
+class _VendedorMostrarFacturaWidgetState
+    extends State<VendedorMostrarFacturaWidget> {
+  late VendedorMostrarFacturaModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SearchTemplateModel());
-
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model = createModel(context, () => VendedorMostrarFacturaModel());
   }
 
   @override
@@ -95,7 +94,7 @@ class _SearchTemplateWidgetState extends State<SearchTemplateWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 60.0, 0.0, 0.0),
                                         child: Text(
-                                          'Buscar',
+                                          'Mostrar Rutas',
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
@@ -107,93 +106,6 @@ class _SearchTemplateWidgetState extends State<SearchTemplateWidget> {
                                       ),
                                     ),
                                   ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 100.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 0.0),
-                                          child: TextFormField(
-                                            controller: _model.textController,
-                                            focusNode:
-                                                _model.textFieldFocusNode,
-                                            autofocus: true,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              labelText:
-                                                  'Ingrese nombre a buscar...',
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium,
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium,
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                  color: Color(0xFF1F66F2),
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(50.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(50.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(50.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(50.0),
-                                              ),
-                                              filled: true,
-                                              prefixIcon: const Icon(
-                                                Icons.search,
-                                                color: Color(0xFFF4B402),
-                                                size: 35.0,
-                                              ),
-                                              suffixIcon: const Icon(
-                                                Icons.person_rounded,
-                                                size: 35.0,
-                                              ),
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
-                                            validator: _model
-                                                .textControllerValidator
-                                                .asValidator(context),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
                                 ),
                                 Align(
                                   alignment: const AlignmentDirectional(0.0, -0.44),
@@ -368,16 +280,18 @@ class _SearchTemplateWidgetState extends State<SearchTemplateWidget> {
                         ),
                         Align(
                           alignment: const AlignmentDirectional(0.0, -1.0),
-                          child: Container(
-                            width: 150.0,
-                            height: 150.0,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/641839.png',
-                              fit: BoxFit.cover,
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Container(
+                              width: 150.0,
+                              height: 150.0,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.network(
+                                currentUserPhoto,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),

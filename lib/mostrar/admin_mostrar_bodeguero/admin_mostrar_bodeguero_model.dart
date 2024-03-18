@@ -1,15 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'search_template_widget.dart' show SearchTemplateWidget;
+import 'admin_mostrar_bodeguero_widget.dart' show AdminMostrarBodegueroWidget;
 import 'package:flutter/material.dart';
 
-class SearchTemplateModel extends FlutterFlowModel<SearchTemplateWidget> {
+class AdminMostrarBodegueroModel
+    extends FlutterFlowModel<AdminMostrarBodegueroWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
 
   /// Initialization and disposal methods.
 
@@ -19,8 +16,6 @@ class SearchTemplateModel extends FlutterFlowModel<SearchTemplateWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
   }
 
   /// Action blocks are added here.

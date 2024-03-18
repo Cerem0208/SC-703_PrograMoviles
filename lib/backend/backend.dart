@@ -11,6 +11,7 @@ import 'schema/rutas_record.dart';
 import 'schema/productos_record.dart';
 import 'schema/factura_record.dart';
 import 'schema/ordenes_record.dart';
+import 'schema/camion_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -24,6 +25,7 @@ export 'schema/rutas_record.dart';
 export 'schema/productos_record.dart';
 export 'schema/factura_record.dart';
 export 'schema/ordenes_record.dart';
+export 'schema/camion_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -242,6 +244,43 @@ Future<List<OrdenesRecord>> queryOrdenesRecordOnce({
     queryCollectionOnce(
       OrdenesRecord.collection,
       OrdenesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CamionRecords (as a Stream and as a Future).
+Future<int> queryCamionRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CamionRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CamionRecord>> queryCamionRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CamionRecord.collection,
+      CamionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CamionRecord>> queryCamionRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CamionRecord.collection,
+      CamionRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

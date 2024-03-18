@@ -1,6 +1,34 @@
 {
   "indexes": [
     {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isVendedor",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "_id",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isBodeguero",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "_id",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "factura",
       "queryScope": "COLLECTION",
       "fields": [

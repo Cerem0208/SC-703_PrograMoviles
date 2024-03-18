@@ -72,13 +72,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomeWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? const AdminPageWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomeWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? const AdminPageWidget() : const LoginWidget(),
         ),
         FFRoute(
           name: 'adminMain',
@@ -161,19 +161,54 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AdminMenuEmpresaClienteWidget(),
         ),
         FFRoute(
-          name: 'Home',
-          path: '/home',
-          builder: (context, params) => const HomeWidget(),
-        ),
-        FFRoute(
           name: 'Admin_Page',
           path: '/adminPage',
           builder: (context, params) => const AdminPageWidget(),
         ),
         FFRoute(
-          name: 'Search_Template',
-          path: '/searchTemplate',
-          builder: (context, params) => const SearchTemplateWidget(),
+          name: 'vendedorCrearOrden',
+          path: '/vendedorCrearOrden',
+          builder: (context, params) => const VendedorCrearOrdenWidget(),
+        ),
+        FFRoute(
+          name: 'vendedorCrearOrdenCopy',
+          path: '/vendedorCrearOrdenCopy',
+          builder: (context, params) => const VendedorCrearOrdenCopyWidget(),
+        ),
+        FFRoute(
+          name: 'AdminBuscarCliente',
+          path: '/adminBuscarCliente',
+          builder: (context, params) => const AdminBuscarClienteWidget(),
+        ),
+        FFRoute(
+          name: 'adminBuscarVendedor',
+          path: '/adminBuscarVendedor',
+          builder: (context, params) => const AdminBuscarVendedorWidget(),
+        ),
+        FFRoute(
+          name: 'adminBuscarRutas',
+          path: '/adminBuscarRutas',
+          builder: (context, params) => const AdminBuscarRutasWidget(),
+        ),
+        FFRoute(
+          name: 'AdminMostrarBodeguero',
+          path: '/adminMostrarBodeguero',
+          builder: (context, params) => const AdminMostrarBodegueroWidget(),
+        ),
+        FFRoute(
+          name: 'vendedorBuscarOrden',
+          path: '/vendedorBuscarOrden',
+          builder: (context, params) => const VendedorBuscarOrdenWidget(),
+        ),
+        FFRoute(
+          name: 'VendedorMostrarFactura',
+          path: '/vendedorMostrarFactura',
+          builder: (context, params) => const VendedorMostrarFacturaWidget(),
+        ),
+        FFRoute(
+          name: 'MostarCamion',
+          path: '/mostarCamion',
+          builder: (context, params) => const MostarCamionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
