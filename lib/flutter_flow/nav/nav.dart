@@ -206,9 +206,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const VendedorMostrarFacturaWidget(),
         ),
         FFRoute(
-          name: 'MostarCamion',
-          path: '/mostarCamion',
-          builder: (context, params) => const MostarCamionWidget(),
+          name: 'MostrarCamion',
+          path: '/mostrarCamion',
+          builder: (context, params) => const MostrarCamionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/modifica_empresa_cliente_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -195,7 +196,7 @@ class _AdminBuscarClienteWidgetState extends State<AdminBuscarClienteWidget> {
                                                             ActionPane(
                                                           motion:
                                                               const ScrollMotion(),
-                                                          extentRatio: 0.75,
+                                                          extentRatio: 0.5,
                                                           children: [
                                                             SlidableAction(
                                                               label: 'Borrar',
@@ -242,21 +243,48 @@ class _AdminBuscarClienteWidgetState extends State<AdminBuscarClienteWidget> {
                                                               icon:
                                                                   FontAwesomeIcons
                                                                       .userEdit,
-                                                              onPressed: (_) {
-                                                                print(
-                                                                    'btnModificar pressed ...');
-                                                              },
-                                                            ),
-                                                            SlidableAction(
-                                                              label: 'Share',
-                                                              backgroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .info,
-                                                              icon: Icons.share,
-                                                              onPressed: (_) {
-                                                                print(
-                                                                    'SlidableActionWidget pressed ...');
+                                                              onPressed:
+                                                                  (_) async {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return GestureDetector(
+                                                                      onTap: () => _model
+                                                                              .unfocusNode
+                                                                              .canRequestFocus
+                                                                          ? FocusScope.of(context).requestFocus(_model
+                                                                              .unfocusNode)
+                                                                          : FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            SizedBox(
+                                                                          height:
+                                                                              MediaQuery.sizeOf(context).height * 0.4,
+                                                                          child:
+                                                                              ModificaEmpresaClienteWidget(
+                                                                            empresaCliente:
+                                                                                listViewEmpresaClienteRecord,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
                                                               },
                                                             ),
                                                           ],
@@ -268,14 +296,14 @@ class _AdminBuscarClienteWidgetState extends State<AdminBuscarClienteWidget> {
                                                             size: 35.0,
                                                           ),
                                                           title: Text(
-                                                            columnEmpresaClienteRecord
+                                                            listViewEmpresaClienteRecord
                                                                 .nombreCliente,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .titleLarge,
                                                           ),
                                                           subtitle: Text(
-                                                            columnEmpresaClienteRecord
+                                                            listViewEmpresaClienteRecord
                                                                 .telefonoCliente
                                                                 .toString(),
                                                             textAlign:

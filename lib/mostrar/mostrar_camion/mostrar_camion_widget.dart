@@ -3,30 +3,27 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/modificar/editar_facturas/editar_facturas_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'vendedor_mostrar_factura_model.dart';
-export 'vendedor_mostrar_factura_model.dart';
+import 'mostrar_camion_model.dart';
+export 'mostrar_camion_model.dart';
 
-class VendedorMostrarFacturaWidget extends StatefulWidget {
-  const VendedorMostrarFacturaWidget({super.key});
+class MostrarCamionWidget extends StatefulWidget {
+  const MostrarCamionWidget({super.key});
 
   @override
-  State<VendedorMostrarFacturaWidget> createState() =>
-      _VendedorMostrarFacturaWidgetState();
+  State<MostrarCamionWidget> createState() => _MostrarCamionWidgetState();
 }
 
-class _VendedorMostrarFacturaWidgetState
-    extends State<VendedorMostrarFacturaWidget> {
-  late VendedorMostrarFacturaModel _model;
+class _MostrarCamionWidgetState extends State<MostrarCamionWidget> {
+  late MostrarCamionModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => VendedorMostrarFacturaModel());
+    _model = createModel(context, () => MostrarCamionModel());
   }
 
   @override
@@ -95,7 +92,7 @@ class _VendedorMostrarFacturaWidgetState
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 60.0, 0.0, 0.0),
                                         child: Text(
-                                          'Mostrar Facturas',
+                                          'Mostrar Camion',
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
@@ -119,18 +116,16 @@ class _VendedorMostrarFacturaWidgetState
                                         Expanded(
                                           child: AuthUserStreamWidget(
                                             builder: (context) => StreamBuilder<
-                                                List<FacturaRecord>>(
-                                              stream: queryFacturaRecord(
-                                                queryBuilder: (facturaRecord) =>
-                                                    facturaRecord
-                                                        .where(
-                                                          'empresa',
-                                                          isEqualTo: valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.sEmpresa,
-                                                              ''),
-                                                        )
-                                                        .orderBy('fecha'),
+                                                List<CamionRecord>>(
+                                              stream: queryCamionRecord(
+                                                queryBuilder: (camionRecord) =>
+                                                    camionRecord.where(
+                                                  'empresa',
+                                                  isEqualTo: valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.sEmpresa,
+                                                      ''),
+                                                ),
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -152,20 +147,20 @@ class _VendedorMostrarFacturaWidgetState
                                                     ),
                                                   );
                                                 }
-                                                List<FacturaRecord>
-                                                    listViewFacturaRecordList =
+                                                List<CamionRecord>
+                                                    listViewCamionRecordList =
                                                     snapshot.data!;
                                                 return ListView.builder(
                                                   padding: EdgeInsets.zero,
                                                   scrollDirection:
                                                       Axis.vertical,
                                                   itemCount:
-                                                      listViewFacturaRecordList
+                                                      listViewCamionRecordList
                                                           .length,
                                                   itemBuilder:
                                                       (context, listViewIndex) {
-                                                    final listViewFacturaRecord =
-                                                        listViewFacturaRecordList[
+                                                    final listViewCamionRecord =
+                                                        listViewCamionRecordList[
                                                             listViewIndex];
                                                     return Slidable(
                                                       endActionPane: ActionPane(
@@ -174,51 +169,7 @@ class _VendedorMostrarFacturaWidgetState
                                                         extentRatio: 0.5,
                                                         children: [
                                                           SlidableAction(
-                                                            label: 'Modificar',
-                                                            backgroundColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                            icon: Icons.edit,
-                                                            onPressed:
-                                                                (_) async {
-                                                              await showModalBottomSheet(
-                                                                isScrollControlled:
-                                                                    true,
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                enableDrag:
-                                                                    false,
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (context) {
-                                                                  return GestureDetector(
-                                                                    onTap: () => _model
-                                                                            .unfocusNode
-                                                                            .canRequestFocus
-                                                                        ? FocusScope.of(context).requestFocus(_model
-                                                                            .unfocusNode)
-                                                                        : FocusScope.of(context)
-                                                                            .unfocus(),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: MediaQuery
-                                                                          .viewInsetsOf(
-                                                                              context),
-                                                                      child:
-                                                                          const EditarFacturasWidget(),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              ).then((value) =>
-                                                                  safeSetState(
-                                                                      () {}));
-                                                            },
-                                                          ),
-                                                          SlidableAction(
-                                                            label: 'Eliminar',
+                                                            label: 'Borrar',
                                                             backgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -227,9 +178,22 @@ class _VendedorMostrarFacturaWidgetState
                                                                 .delete_sharp,
                                                             onPressed:
                                                                 (_) async {
-                                                              await listViewFacturaRecord
+                                                              await listViewCamionRecord
                                                                   .reference
                                                                   .delete();
+                                                            },
+                                                          ),
+                                                          SlidableAction(
+                                                            label: 'Editar',
+                                                            backgroundColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
+                                                            icon: Icons
+                                                                .edit_location_sharp,
+                                                            onPressed: (_) {
+                                                              print(
+                                                                  'accEditar pressed ...');
                                                             },
                                                           ),
                                                         ],
@@ -240,15 +204,15 @@ class _VendedorMostrarFacturaWidgetState
                                                           size: 35.0,
                                                         ),
                                                         title: Text(
-                                                          listViewFacturaRecord
-                                                              .nombre,
+                                                          listViewCamionRecord
+                                                              .conductor,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleLarge,
                                                         ),
                                                         subtitle: Text(
-                                                          listViewFacturaRecord
-                                                              .total
+                                                          listViewCamionRecord
+                                                              .cantidaOrdenes
                                                               .toString(),
                                                           textAlign:
                                                               TextAlign.start,
@@ -357,7 +321,7 @@ class _VendedorMostrarFacturaWidgetState
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('vendedorMenuFacturas');
+                          context.pushNamed('adminMenuRuta');
                         },
                         child: Icon(
                           Icons.arrow_back_ios,

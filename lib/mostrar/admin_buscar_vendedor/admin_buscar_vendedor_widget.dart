@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/modificar/editar_vendedor/editar_vendedor_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'admin_buscar_vendedor_model.dart';
@@ -188,9 +189,50 @@ class _AdminBuscarVendedorWidgetState extends State<AdminBuscarVendedorWidget> {
                                                                   .info,
                                                           icon: Icons
                                                               .edit_document,
-                                                          onPressed: (_) {
-                                                            print(
-                                                                'accEditar pressed ...');
+                                                          onPressed: (_) async {
+                                                            await showModalBottomSheet(
+                                                              isScrollControlled:
+                                                                  true,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              enableDrag: false,
+                                                              context: context,
+                                                              builder:
+                                                                  (context) {
+                                                                return GestureDetector(
+                                                                  onTap: () => _model
+                                                                          .unfocusNode
+                                                                          .canRequestFocus
+                                                                      ? FocusScope.of(
+                                                                              context)
+                                                                          .requestFocus(_model
+                                                                              .unfocusNode)
+                                                                      : FocusScope.of(
+                                                                              context)
+                                                                          .unfocus(),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        SizedBox(
+                                                                      height:
+                                                                          MediaQuery.sizeOf(context).height *
+                                                                              0.4,
+                                                                      child:
+                                                                          EditarVendedorWidget(
+                                                                        vendedor:
+                                                                            listViewUsersRecord,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ).then((value) =>
+                                                                safeSetState(
+                                                                    () {}));
                                                           },
                                                         ),
                                                       ],
@@ -319,7 +361,7 @@ class _AdminBuscarVendedorWidgetState extends State<AdminBuscarVendedorWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('vendedorMenuFacturas');
+                          context.pushNamed('adminMenuVendedor');
                         },
                         child: Icon(
                           Icons.arrow_back_ios,

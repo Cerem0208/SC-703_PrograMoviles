@@ -6,6 +6,7 @@ import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
 class CamionRecord extends FirestoreRecord {
   CamionRecord._(
@@ -15,13 +16,31 @@ class CamionRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "nombre" field.
-  String? _nombre;
-  String get nombre => _nombre ?? '';
-  bool hasNombre() => _nombre != null;
+  // "matricula" field.
+  String? _matricula;
+  String get matricula => _matricula ?? '';
+  bool hasMatricula() => _matricula != null;
+
+  // "conductor" field.
+  String? _conductor;
+  String get conductor => _conductor ?? '';
+  bool hasConductor() => _conductor != null;
+
+  // "cantidaOrdenes" field.
+  int? _cantidaOrdenes;
+  int get cantidaOrdenes => _cantidaOrdenes ?? 0;
+  bool hasCantidaOrdenes() => _cantidaOrdenes != null;
+
+  // "empresa" field.
+  String? _empresa;
+  String get empresa => _empresa ?? '';
+  bool hasEmpresa() => _empresa != null;
 
   void _initializeFields() {
-    _nombre = snapshotData['nombre'] as String?;
+    _matricula = snapshotData['matricula'] as String?;
+    _conductor = snapshotData['conductor'] as String?;
+    _cantidaOrdenes = castToType<int>(snapshotData['cantidaOrdenes']);
+    _empresa = snapshotData['empresa'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -58,11 +77,17 @@ class CamionRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createCamionRecordData({
-  String? nombre,
+  String? matricula,
+  String? conductor,
+  int? cantidaOrdenes,
+  String? empresa,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'nombre': nombre,
+      'matricula': matricula,
+      'conductor': conductor,
+      'cantidaOrdenes': cantidaOrdenes,
+      'empresa': empresa,
     }.withoutNulls,
   );
 
@@ -74,11 +99,15 @@ class CamionRecordDocumentEquality implements Equality<CamionRecord> {
 
   @override
   bool equals(CamionRecord? e1, CamionRecord? e2) {
-    return e1?.nombre == e2?.nombre;
+    return e1?.matricula == e2?.matricula &&
+        e1?.conductor == e2?.conductor &&
+        e1?.cantidaOrdenes == e2?.cantidaOrdenes &&
+        e1?.empresa == e2?.empresa;
   }
 
   @override
-  int hash(CamionRecord? e) => const ListEquality().hash([e?.nombre]);
+  int hash(CamionRecord? e) => const ListEquality()
+      .hash([e?.matricula, e?.conductor, e?.cantidaOrdenes, e?.empresa]);
 
   @override
   bool isValidKey(Object? o) => o is CamionRecord;

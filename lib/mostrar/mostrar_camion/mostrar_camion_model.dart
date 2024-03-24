@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'mostar_camion_widget.dart' show MostarCamionWidget;
+import 'mostrar_camion_widget.dart' show MostrarCamionWidget;
 import 'package:flutter/material.dart';
 
-class MostarCamionModel extends FlutterFlowModel<MostarCamionWidget> {
+class MostrarCamionModel extends FlutterFlowModel<MostrarCamionWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

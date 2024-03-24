@@ -46,5 +46,5 @@ export '/mostrar/vendedor_buscar_orden/vendedor_buscar_orden_widget.dart'
     show VendedorBuscarOrdenWidget;
 export '/mostrar/vendedor_mostrar_factura/vendedor_mostrar_factura_widget.dart'
     show VendedorMostrarFacturaWidget;
-export '/mostrar/mostar_camion/mostar_camion_widget.dart'
-    show MostarCamionWidget;
+export '/mostrar/mostrar_camion/mostrar_camion_widget.dart'
+    show MostrarCamionWidget;

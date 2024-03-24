@@ -376,7 +376,7 @@ class _BodegueroMainWidgetState extends State<BodegueroMainWidget> {
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
                                                           context.pushNamed(
-                                                              'MostarCamion');
+                                                              'MostrarCamion');
                                                         },
                                                         text: 'Ver Camión',
                                                         options:
